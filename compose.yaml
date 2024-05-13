@@ -1,0 +1,15 @@
+services:
+  fastapi-template-backend:
+    build: .
+    restart: always
+    environment:
+      - FA_DB_HOST=$FA_DB_HOST
+      - FA_DB_USER=$FA_DB_USER
+      - FA_DB_PASSWORD=$FA_DB_PASSWORD
+      - FA_DB_NAME=$FA_DB_NAME
+      - FA_JWT_KEY=$FA_JWT_KEY
+      - FA_RE_CAPTCHA_SECRET=$FA_RE_CAPTCHA_SECRET
+      - FA_FERNET_KEY=$FA_FERNET_KEY
+      - FA_SES_FROM_EMAIL=$FA_SES_FROM_EMAIL
+    ports:
+      - "8000:8000"
